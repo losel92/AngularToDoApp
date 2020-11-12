@@ -1,0 +1,13 @@
+<div>
+  <div class="d-flex">
+    <p>Tasks:</p>
+    <button (click)="addTask()">+</button>
+  </div>
+
+  <div *ngFor="let task of taskList">
+    <app-task-item
+      [task]="task"
+      (deleteTask)="deleteTask($event)"
+    ></app-task-item>
+  </div>
+</div>

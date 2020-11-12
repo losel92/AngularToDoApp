@@ -1,0 +1,27 @@
+<div [ngClass]="setClasses()">
+  <div class="d-flex align-items-center">
+    <input
+      type="checkbox"
+      [checked]="task.completed"
+      (change)="checkboxChangeFn($event)"
+    />
+    <div *ngIf="!isEditingTitle; else editMode">
+      <span>{{ task.title }}</span>
+      <button class="task-title-edit" (click)="titleEditFn($event)">
+        <fa-icon [icon]="pencilIcon" size="sm"></fa-icon>
+      </button>
+    </div>
+    <ng-template #editMode>
+      <input
+        #titleInput
+        type="text"
+        [value]="task.title"
+        (focusout)="titleChangeFn($event)"
+        (keyup.enter)="titleChangeFn($event)"
+      />
+    </ng-template>
+    <button class="del" (click)="onDelete(task)">
+      <fa-icon [icon]="trashIcon" size="sm"></fa-icon>
+    </button>
+  </div>
+</div>

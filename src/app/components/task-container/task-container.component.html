@@ -1,8 +1,5 @@
 <div>
-  <div class="d-flex">
-    <p>Tasks:</p>
-    <button (click)="addTask()">+</button>
-  </div>
+  <app-add-task (addTask)="addTask($event)"></app-add-task>
 
   <div *ngFor="let task of taskList">
     <app-task-item

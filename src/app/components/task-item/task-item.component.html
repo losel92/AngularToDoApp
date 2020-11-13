@@ -1,5 +1,5 @@
 <div [ngClass]="setClasses()">
-  <div class="d-flex align-items-center">
+  <div class="w-100 title-container d-flex align-items-center">
     <input
       type="checkbox"
       [checked]="task.completed"
@@ -7,10 +7,12 @@
     />
     <div *ngIf="!isEditingTitle; else editMode">
       <span>{{ task.title }}</span>
-      <button class="task-title-edit" (click)="titleEditFn($event)">
-        <fa-icon [icon]="pencilIcon" size="sm"></fa-icon>
-      </button>
     </div>
+  </div>
+  <div class="d-flex">
+    <button class="w-100 task-title-edit" (click)="titleEditFn($event)">
+      <fa-icon [icon]="pencilIcon" size="sm"></fa-icon>
+    </button>
     <ng-template #editMode>
       <input
         #titleInput
@@ -20,7 +22,7 @@
         (keyup.enter)="titleChangeFn($event)"
       />
     </ng-template>
-    <button class="del" (click)="onDelete(task)">
+    <button class="w-100 del" (click)="onDelete(task)">
       <fa-icon [icon]="trashIcon" size="sm"></fa-icon>
     </button>
   </div>

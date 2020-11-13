@@ -2,7 +2,30 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 
+:root {
+  --color-primary: #2a9d8f;
+  --color-secondary: #f4a261;
+  --color-third: #e9c46a;
+  --color-text: #131200;
+  --color-buttonbg: #fff;
+}
+
 body {
-  font-family: "arial";
+  font-family: "calibri";
   margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+}
+
+button {
+  background-color: var(--color-buttonbg);
+  border: 1px solid var(--color-text);
+  border-radius: 2px;
+  padding: 0 5px;
+}
+
+input[type="text"] {
+  border: 1px solid var(--color-text);
+  border-radius: 2px;
+  padding: 0px 10px;
 }

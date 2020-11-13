@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { TaskContainerComponent } from './components/task-container/task-container.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskContainerComponent, TaskItemComponent],
+  declarations: [AppComponent, TaskContainerComponent, TaskItemComponent, HeaderComponent, AddTaskComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,12 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <input
+    #titleInput
+    type="text"
+    name="title"
+    [(ngModel)]="title"
+    placeholder="Add a new task..."
+  />
+  <button type="submit">
+    <fa-icon [icon]="plusIcon" size="sm"></fa-icon>
+  </button>
+</form>

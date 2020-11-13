@@ -1,20 +1,18 @@
 .task {
-  background-color: #ddd;
-  display: inline-block;
+  background-color: var(--color-third);
+  display: inline-flex;
+  justify-content: space-between;
   padding: 5px;
+  width: 100%;
+  font-size: 20px;
 
   button {
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 2px;
-    padding: 0 5px;
-
     &:hover {
       cursor: pointer;
     }
 
     fa-icon {
-      font-size: 12px;
+      font-size: 15px;
     }
   }
 
@@ -25,6 +23,10 @@
     > div > * {
       margin: 0px 5px;
     }
+  }
+
+  input[type="text"] {
+    width: 100%;
   }
 }
 

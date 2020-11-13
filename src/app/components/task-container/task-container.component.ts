@@ -25,7 +25,16 @@ export class TaskContainerComponent implements OnInit {
     this.taskService.deleteTask(task).subscribe();
   }
 
-  addTask() {
-    this.taskList.push(new Task());
+  addTask(task: Task) {
+    // Add to Server
+    this.taskService.addTask(task).subscribe((task) => {
+      // Determine task.id
+      const taskId = this.taskList.length
+        ? this.taskList[this.taskList.length - 1].id + 1
+        : 1;
+      task.id = taskId;
+      // Add to UI
+      this.taskList.push(task);
+    });
   }
 }

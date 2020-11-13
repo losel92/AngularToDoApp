@@ -33,7 +33,16 @@ export class TaskItemComponent implements OnInit {
 
   constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //If the title is empty, show the input field
+    if (this.task.title == '') {
+      this.isEditingTitle = true;
+      setTimeout(() => {
+        // this will make it execute after the above boolean has changed
+        this.inputField.nativeElement.focus();
+      }, 0);
+    }
+  }
 
   setClasses() {
     let classes = {
@@ -61,12 +70,14 @@ export class TaskItemComponent implements OnInit {
   }
 
   titleEditFn(e: any) {
-    this.isEditingTitle = true;
+    if (!this.isEditingTitle) {
+      this.isEditingTitle = true;
 
-    setTimeout(() => {
-      // this will make it execute after the above boolean has changed
-      this.inputField.nativeElement.focus();
-    }, 0);
+      setTimeout(() => {
+        // this will make it execute after the above boolean has changed
+        this.inputField.nativeElement.focus();
+      }, 0);
+    }
   }
 
   onDelete(task: Task) {
